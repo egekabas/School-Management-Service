@@ -1,4 +1,4 @@
-package school_management.controller;
+package school_management.security.controller;
 
 import jakarta.validation.constraints.NotEmpty;
 

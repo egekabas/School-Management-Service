@@ -1,4 +1,4 @@
-package school_management.configuration;
+package school_management.security.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

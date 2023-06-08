@@ -1,6 +1,5 @@
-package school_management.service;
+package school_management.security.service;
 
-import jakarta.validation.constraints.NotEmpty;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -8,7 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import school_management.controller.LoginRequest;
+import school_management.security.controller.LoginRequest;
 
 @Service
 @RequiredArgsConstructor

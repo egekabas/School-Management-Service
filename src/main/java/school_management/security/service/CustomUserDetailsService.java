@@ -1,4 +1,4 @@
-package school_management.service;
+package school_management.security.service;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;

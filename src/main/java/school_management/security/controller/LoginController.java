@@ -1,13 +1,14 @@
-package school_management.controller;
+package school_management.security.controller;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import school_management.service.LoginService;
+import org.springframework.web.bind.annotation.RestController;
+import school_management.security.service.LoginService;
 
-@Controller
+@RestController
 @AllArgsConstructor
 public class LoginController {
 
