@@ -4,8 +4,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.security.core.userdetails.User;
+import school_management.CRUD.controller.NewUserRequest;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -41,5 +45,14 @@ public class UserEntity {
         user.role = Role.ADMIN;
 
         return user;
+    }
+
+    public UserEntity(NewUserRequest userRequest, String password){
+        this.role = userRequest.role();
+        this.firstName = userRequest.firstName();
+        this.lastName = userRequest.lastName();
+        this.email = userRequest.email();
+        this.username = userRequest.username();
+        this.password = password;
     }
 }

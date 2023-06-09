@@ -1,6 +1,7 @@
 package school_management.CRUD.controller;
 
 import jakarta.annotation.security.RolesAllowed;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.apache.tomcat.util.descriptor.web.ContextHandler;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -8,10 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import school_management.CRUD.entities.UserEntity;
 import school_management.CRUD.service.DatabaseService;
 import school_management.security.service.CustomUserDetailsService;
@@ -34,6 +32,14 @@ public class UserDatabaseController {
         return databaseService.loadAll();
     }
 
+    @PostMapping("/add")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String addUser(@RequestBody @Valid NewUserRequest userRequest) { return databaseService.addNewUser(userRequest); }
+
+    @DeleteMapping("/delete/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String deleteUser(@PathVariable("id") @Valid long id){ return databaseService.deleteByID(id);}
+
     @GetMapping("/getCurrentAuthorities")
     @ResponseBody
     public Object getCurrentAuthorities() {
@@ -41,7 +47,6 @@ public class UserDatabaseController {
     }
 
     @GetMapping("/getIfAuthenticated")
-    @ResponseBody
     public boolean getIfAuthenticated(Authentication authentication){
         return authentication != null;
     }
@@ -50,6 +55,13 @@ public class UserDatabaseController {
     @ResponseBody
     public UserEntity getCurrentUser(){
         return databaseService.loadCurrentUser();
+    }
+
+
+    @PostMapping("/changePassword")
+    @ResponseBody
+    public String changePassword(@RequestBody @Valid ChangePasswordRequest request) {
+        return databaseService.changePassword(request.oldPassword(), request.newPassword());
     }
 
 }

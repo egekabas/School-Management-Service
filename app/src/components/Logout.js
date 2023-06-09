@@ -12,7 +12,7 @@ function Logout() {
                 method: "POST",
                 headers: {"Access-Control-Allow-Origin": "*"}
             }).then((response) => {setLoggedOut(true);})
-    },[])
+    },[]);
 
     return (
         <div>

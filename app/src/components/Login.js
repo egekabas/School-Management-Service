@@ -12,21 +12,20 @@ function Login(){
             <div className="error">{errorMessages.message}</div>
         );
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-
         const body = JSON.stringify({username: event.target.username.value, password: event.target.password.value});
-
-        const loginResult = await fetch("login", {method: 'POST', headers: {'Content-Type':'application/json'}, body: body}).then(
-            (response) => response.text()
-        );
-
-        if(loginResult === "Login Successful"){
-            setResult("Login Successful");
-            window.location.replace("/");
-        } else{
-            setResult("Incorrect username or password");
-        }
+        fetch("login", {method: 'POST', headers: {'Content-Type':'application/json'}, body: body})
+            .then(response => response.text())
+                .then(loginResult => {
+                    if(loginResult === "Login Successful"){
+                        setResult("Login Successful");
+                        window.location.replace("/");
+                    } else{
+                        setResult("Incorrect username or password");
+                    }
+                }
+        )
     }
 
     // JSX code for login form
