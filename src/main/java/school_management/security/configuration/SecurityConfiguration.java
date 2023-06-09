@@ -1,5 +1,6 @@
 package school_management.security.configuration;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -24,10 +25,12 @@ public class SecurityConfiguration {
         return http.csrf().disable()
                 .authorizeRequests()
                 .requestMatchers("/login").permitAll()
-                .anyRequest().permitAll()
+                .requestMatchers("/users/getIfAuthenticated").permitAll()
+                .anyRequest().authenticated().and()
+                .logout().permitAll().logoutSuccessHandler((request, response, authentication) -> {
+                    response.setStatus(HttpServletResponse.SC_OK);
+                })
                 .and()
-//                formLogin().disable()
-//                .logout().disable()
                 .securityContext((securityContext) -> securityContext.requireExplicitSave(true))
                 .build();
     }
