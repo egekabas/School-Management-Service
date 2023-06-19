@@ -1,0 +1,11 @@
+.center-content{
+    margin: 2% 30%;
+    width: 40%;
+}
+
+.sidebar{
+    padding: 2%;
+    width: 300px;
+    float: left;
+    background-color: #ff9876;
+}

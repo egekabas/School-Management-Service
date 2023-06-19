@@ -1,0 +1,36 @@
+.title{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.list-element{
+    height: 60px;
+    width: 100%;
+    margin: 5px;
+    border-style: solid;
+    padding: 10px;
+}
+
+.subject-link{
+    float: left;
+    margin-left: 5px;
+}
+
+.delete-button{
+    float: right;
+    margin-right: 5px;
+}
+
+.description-container{
+    height: fit-content;
+    padding-bottom: 15px;
+    /*border-style: solid;*/
+}
+
+.grade-container{
+    margin-top: 20px;
+}
+
+.go-back-container{
+    margin-top: 60px;
+}

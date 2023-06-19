@@ -1,0 +1,13 @@
+.title{
+    margin-top: 30px;
+    font-size: 25px;
+}
+.description-paragraph{
+    text-align: left;
+    margin-left: 20%;
+    margin-bottom: 30px;
+}
+.paragraph-input{
+    height: 60px;
+    width: 80%;
+}

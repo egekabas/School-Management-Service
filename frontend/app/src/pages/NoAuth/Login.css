@@ -1,0 +1,12 @@
+.login-page {
+    margin: 10% auto;
+    padding: 2%;
+    width: 40%;
+    outline-style: dotted;
+    background: aquamarine;
+    font-size: 20px;
+}
+
+.login-form{
+    margin: 5% auto;
+}

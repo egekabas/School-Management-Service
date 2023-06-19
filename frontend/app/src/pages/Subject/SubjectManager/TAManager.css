@@ -1,0 +1,16 @@
+.title{
+    font-size: 30px;
+}
+
+.container{
+    border-style: solid;
+    margin: 20px;
+    padding: 10px;
+}
+
+.popup{
+    background-color: aquamarine;
+    margin-left: 80px;
+    padding: 100px;
+    width: fit-content;
+}
