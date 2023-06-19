@@ -6,4 +6,4 @@ running the command "./mvnw spring-boot:run" starts the backend server on localh
 
 Frontend written using ReactJS. Going to the frontend directory and running "npm start" starts the server on localhost:3000
 
-The Database uses MySQL. backend/src/main/resources/application.properties has the required setup for the database.
+The Database uses MySQL. backend/src/main/resources/application.properties has the required setup info for the database.
