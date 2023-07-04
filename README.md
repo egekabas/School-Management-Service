@@ -1,4 +1,3 @@
-# School-Management-Service
 Secure CRUD service with user authentication
 
 Backend written using Java Spring Boot, with dependencies Spring Security, Spring Data JPA, and Spring Web. Going to the backend directory
